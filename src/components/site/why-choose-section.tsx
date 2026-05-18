@@ -40,44 +40,37 @@ export function WhyChooseSection() {
             Critério de entrega
           </div>
           <div className="text-sm leading-7 text-muted">
-            Mais profundidade operacional, menos camada visual vazia. O foco é construir
-            algo útil, legível e pronto para evoluir.
+            Mais profundidade operacional, menos camadas decorativas e mais clareza para
+            quem usa o produto todos os dias.
           </div>
         </div>
       }
     >
-      <div className="grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="subcard p-6 sm:p-7">
-          <div className="space-y-4">
-            <div className="section-kicker">Confiança técnica</div>
-            <h3 className="max-w-xl text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-              Boa engenharia precisa aparecer na operação e não apenas no discurso.
-            </h3>
-            <p className="max-w-2xl text-base leading-8 text-muted">
-              A KadoshLabs trabalha com arquitetura enxuta, interfaces claras e uma
-              leitura prática do negócio. Isso reduz excesso, melhora adoção e cria uma
-              base mais confiável para atender o dia a dia da equipe.
-            </p>
-          </div>
+      <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+        <div className="max-w-xl space-y-4">
+          <div className="section-kicker">Confiança técnica</div>
+          <h3 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+            Boa engenharia precisa aparecer na operação e não apenas no discurso.
+          </h3>
+          <p className="text-base leading-8 text-muted">
+            A KadoshLabs trabalha com arquitetura enxuta, interfaces claras e uma leitura
+            prática do negócio. Isso reduz excesso, melhora adoção e cria uma base mais
+            confiável para atender o dia a dia da equipe.
+          </p>
         </div>
 
-        <div className="subcard-soft p-4 sm:p-5">
-          <div className="grid gap-4 md:grid-cols-2">
-            {reasons.map((reason, index) => (
-              <article key={reason.title} className="subcard p-5">
-                <div className="mb-4 flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-2xl border border-emerald/20 bg-emerald-soft font-mono text-xs text-emerald">
-                    0{index + 1}
-                  </span>
-                  <div className="h-px flex-1 bg-gradient-to-r from-emerald/35 to-transparent" />
-                </div>
-                <h3 className="text-base font-semibold leading-7 text-foreground">
-                  {reason.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-muted">{reason.description}</p>
-              </article>
-            ))}
-          </div>
+        <div className="grid gap-5 md:grid-cols-2">
+          {reasons.map((reason, index) => (
+            <article key={reason.title} className="space-y-3 border-l border-white/8 pl-4">
+              <div className="text-xs uppercase tracking-[0.22em] text-emerald">
+                0{index + 1}
+              </div>
+              <h3 className="text-lg font-semibold leading-7 text-foreground">
+                {reason.title}
+              </h3>
+              <p className="text-sm leading-7 text-muted">{reason.description}</p>
+            </article>
+          ))}
         </div>
       </div>
     </SectionShell>

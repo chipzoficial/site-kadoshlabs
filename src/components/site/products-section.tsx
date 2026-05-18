@@ -39,70 +39,65 @@ export function ProductsSection() {
             Vitrine de produto
           </div>
           <div className="text-sm leading-7 text-muted">
-            Cada produto é apresentado com estrutura de header, corpo, módulos e área
-            de ação para parecer oferta real, não apenas conceito.
+            Produtos apresentados com estrutura comercial mais limpa, sem excesso de
+            compartimentação visual.
           </div>
         </div>
       }
     >
-      <div className="subcard-soft p-4 sm:p-5">
-        <div className="grid gap-4 lg:grid-cols-2">
-          {products.map((product, index) => (
-            <article key={product.name} className="subcard overflow-hidden">
-              <div className="border-b border-white/6 px-5 py-5 sm:px-6">
-                <div className="flex flex-wrap items-start justify-between gap-4">
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <span className="rounded-full border border-emerald/25 bg-emerald-soft px-3 py-1 text-xs font-medium text-emerald">
-                        Em desenvolvimento
-                      </span>
-                      <span className="text-xs uppercase tracking-[0.24em] text-muted-2">
-                        Produto 0{index + 1}
-                      </span>
-                    </div>
-                    <h3 className="text-2xl font-semibold tracking-tight text-foreground">
-                      {product.name}
-                    </h3>
-                  </div>
-
-                  <div className="grid h-18 w-18 place-items-center rounded-[1.6rem] border border-emerald/20 bg-emerald-soft/80 text-lg font-semibold text-emerald">
-                    {product.name.slice(0, 2)}
-                  </div>
+      <div className="grid gap-4 lg:grid-cols-2">
+        {products.map((product, index) => (
+          <article key={product.name} className="item-card p-6">
+            <div className="flex flex-wrap items-start justify-between gap-4">
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="rounded-full border border-emerald/20 bg-emerald-soft px-3 py-1 text-xs font-medium text-emerald">
+                    Em desenvolvimento
+                  </span>
+                  <span className="text-xs uppercase tracking-[0.24em] text-muted-2">
+                    Produto 0{index + 1}
+                  </span>
                 </div>
+                <h3 className="text-2xl font-semibold tracking-tight text-foreground">
+                  {product.name}
+                </h3>
               </div>
 
-              <div className="space-y-6 px-5 py-5 sm:px-6">
-                <p className="max-w-xl text-sm leading-7 text-muted">
-                  {product.description}
-                </p>
-
-                <div className="subcard-soft p-4">
-                  <div className="mb-4 text-xs uppercase tracking-[0.24em] text-muted-2">
-                    Módulos possíveis
-                  </div>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    {product.modules.map((module) => (
-                      <div key={module} className="microcard px-4 py-3 text-sm text-muted">
-                        {module}
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-emerald-soft text-base font-semibold text-emerald">
+                {product.name.slice(0, 2)}
               </div>
+            </div>
 
-              <div className="border-t border-white/6 px-5 py-5 sm:px-6">
-                <div className="flex flex-col gap-3 sm:flex-row">
-                  <Link href="#contato" className="action-secondary">
-                    Ver detalhes
-                  </Link>
-                  <Link href="#contato" className="action-primary">
-                    Solicitar demonstração
-                  </Link>
-                </div>
+            <p className="mt-5 text-sm leading-7 text-muted">{product.description}</p>
+
+            <div className="soft-divider mt-5 pt-5">
+              <div className="mb-3 text-xs uppercase tracking-[0.24em] text-muted-2">
+                Módulos possíveis
               </div>
-            </article>
-          ))}
-        </div>
+              <div className="flex flex-wrap gap-2.5">
+                {product.modules.map((module) => (
+                  <span
+                    key={module}
+                    className="rounded-full bg-white/[0.04] px-3.5 py-2 text-sm text-muted"
+                  >
+                    {module}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="soft-divider mt-6 pt-5">
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link href="#contato" className="action-secondary">
+                  Ver detalhes
+                </Link>
+                <Link href="#contato" className="action-primary">
+                  Solicitar demonstração
+                </Link>
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
     </SectionShell>
   );

@@ -46,29 +46,21 @@ export function ServicesSection() {
         </div>
       }
     >
-      <div className="subcard-soft p-4 sm:p-5">
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {services.map((service, index) => (
-            <article key={service.title} className="subcard flex h-full flex-col p-5">
-              <div className="mb-5 flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-emerald/25 bg-emerald-soft text-sm font-semibold text-emerald">
-                  0{index + 1}
-                </span>
-                <div className="flex-1">
-                  <div className="h-px bg-gradient-to-r from-emerald/40 to-transparent" />
-                </div>
-              </div>
-              <div className="mb-4 text-xs uppercase tracking-[0.22em] text-muted-2">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        {services.map((service, index) => (
+          <article key={service.title} className="item-card p-5">
+            <div className="mb-4 flex items-center gap-3">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-soft text-xs font-semibold text-emerald">
+                0{index + 1}
+              </span>
+              <div className="text-xs uppercase tracking-[0.22em] text-muted-2">
                 {service.detail}
               </div>
-              <h3 className="text-xl font-semibold text-foreground">{service.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-muted">{service.description}</p>
-              <div className="mt-auto pt-5 text-sm font-medium text-emerald">
-                Bloco orientado a uso real
-              </div>
-            </article>
-          ))}
-        </div>
+            </div>
+            <h3 className="text-xl font-semibold text-foreground">{service.title}</h3>
+            <p className="mt-3 text-sm leading-7 text-muted">{service.description}</p>
+          </article>
+        ))}
       </div>
     </SectionShell>
   );

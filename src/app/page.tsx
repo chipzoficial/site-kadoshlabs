@@ -9,10 +9,10 @@ import { WhyChooseSection } from "@/components/site/why-choose-section";
 
 export default function Home() {
   return (
-    <main className="pb-6">
+    <main className="pb-8">
       <Header />
       <HeroSection />
-      <div className="space-y-6 pb-6">
+      <div className="space-y-7 pb-6 lg:space-y-8">
         <ServicesSection />
         <ProductsSection />
         <WhyChooseSection />
